@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="6.py" download>6</a>
+            <button class="copy-btn" onclick="copyFileContent('6.py')">C</button>
+        </li>
+        <li>
+            <a href="7.py" download>7</a>
+            <button class="copy-btn" onclick="copyFileContent('7.py')">C</button>
+        </li>
+        <li>
+            <a href="8.py" download>8</a>
+            <button class="copy-btn" onclick="copyFileContent('8.py')">C</button>
+        </li>
+        <li>
+            <a href="9.py" download>9</a>
+            <button class="copy-btn" onclick="copyFileContent('9.py')">C</button>
+        </li>
+        <li>
+            <a href="10.py" download>10</a>
+            <button class="copy-btn" onclick="copyFileContent('10.py')">C</button>
+        </li>
+        <li>
+            <a href="4-Chapters_Content-1[2].pdf" download>MAN</a>
+            <button class="copy-btn" onclick="copyFileContent('4-Chapters_Content-1[2].pdf')">C</button>
+        </li>
+    </ul>
+    <script>
+        async function copyFileContent(fileName) {
+            try {
+                const response = await fetch(fileName);
+                const text = await response.text();
+                await navigator.clipboard.writeText(text);
+                alert('File content copied to clipboard!');
+            } catch (error) {
+                alert('Failed to copy file content: ' + error);
+            }
+        }
+    </script>
+</body>
+</html>
